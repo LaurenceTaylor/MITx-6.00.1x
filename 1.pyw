@@ -19,3 +19,20 @@ for i in range(len(s) - 2):
         count += 1
 
 print(count)
+
+# 3
+# Write a program that prints the longest substring of s in which the letters occur in alphabetical order. 
+
+best = ''
+
+for i in range(len(s)):
+
+    temp = s[i]
+    while i < len(s) - 1 and s[i] <= s[i + 1]:
+        temp += s[i + 1]
+        i += 1
+    
+    if len(temp) > len(best):
+        best = temp
+
+print(best)
