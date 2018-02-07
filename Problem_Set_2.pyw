@@ -15,7 +15,8 @@ print(interest(balance, monthlyPaymentRate, annualInterestRate))
 By a fixed monthly payment, we mean a single number which does not change each month, but instead is a constant amount that will be paid 
 each month. """
 
-monthlyPayment = 0
+increment = 10
+monthlyPayment = increment
 
 def interest(B, MP, APR):
     for i in range (12):
@@ -28,4 +29,4 @@ while True:
         print(monthlyPayment)
         break
     else:
-        monthlyPayment += 10
+        monthlyPayment += increment
