@@ -19,7 +19,7 @@ monthlyPayment = 0
 
 def interest(B, MP, APR):
     for i in range (12):
-        B = round((B -(MP)), 2)
+        B -= MP
         B = round((B + B * (APR / 12)), 2)
     return(B)
     
