@@ -30,3 +30,29 @@ while True:
         break
     else:
         monthlyPayment += increment
+        
+# 3
+# Using Bisection Search to Make the Program Faster
+
+low = balance / 12
+high = (balance * (1 + annualInterestRate/12)**12) / 12
+epsilon = 0.12
+
+def interest(B, MP, APR):
+    for i in range (12):
+        B = round((B -(MP)), 2)
+        B = round((B + B * (APR / 12)), 2)
+    return(B)
+    
+while True:
+    monthlyPayment = round(((high + low) / 2), 2)
+    
+    if abs(interest(balance, monthlyPayment, annualInterestRate)) < epsilon:
+        print(monthlyPayment)
+        break
+    
+    elif interest(balance, monthlyPayment, annualInterestRate) > 0:
+        low = monthlyPayment
+
+    else:
+        high = monthlyPayment
